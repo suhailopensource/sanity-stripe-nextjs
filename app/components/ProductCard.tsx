@@ -6,7 +6,7 @@ import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import Checkout from './CheckOutBtn';
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
+
 
 export type Props = {
     name: string;

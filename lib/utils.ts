@@ -15,8 +15,14 @@ export const fetchProductdata = async () => {
   return await client.fetch(aboutQuery);
 };
 
+type Transaction = {
+  name: string,
+  price: number,
+  image: string
+}
 
-export async function checkoutProduct(transaction: any) {
+
+export async function checkoutProduct(transaction: Transaction) {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
   const amount = Number(transaction.price) * 100;
